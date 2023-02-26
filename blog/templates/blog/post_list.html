@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog dla programistów</title>
-</head>
-<body>
-    <div>
-        <h1>Witam na stronie bloga</h1>
-        <h2>Witam na stronie bloga</h2>
-        <h3>Witam na stronie bloga</h3>
-        <h4>Witam na stronie bloga</h4>
-        <p>Akapit</p>
-        <em>To jest wyrózniony tekkst</em>
-    </div>
-    <div>
-        {% for post in posts %}
-    </div>
-    <div>
-        <p>Opublikowany: {{ post.publish_date }}</p>
-        <h2><a href="">{{ post.title }}</a> </h2>
-        <em>{{ post.text|linebreaksbr }}</em>
-    </div>
-        {% endfor %}
-</body>
-</html>
+{% extends 'blog/base.html' %}
+    {% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="data">
+                <p>Opublikowany: {{ post.publish_date }}</p>
+            </div>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <em>{{ post.text|linebreaksbr }}</em>
+            </div>
+    {% endfor %}
+    {% endblock %}
