@@ -5,3 +5,6 @@ class ImgForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['image']
+
+class ImgForm:
+    pass
