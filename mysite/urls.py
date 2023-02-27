@@ -25,6 +25,7 @@ urlpatterns = [
     path('image/', Image.as_view(), name='image'),
     path('image/<int:pk>/', ImageDisplay.as_view(), name="image_display")
 ]
+handler404 = 'blog.views.error_404_view'
 
 # Jeżeli folderu nie będzie to zostanie on utworzony
 if settings.DEBUG:
