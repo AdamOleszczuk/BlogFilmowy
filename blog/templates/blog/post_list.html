@@ -6,11 +6,14 @@
             <div class="data">
                 <p>Opublikowany: {{ post.publish_date }}</p>
             </div>
-                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                {% if post.image %}
-                    <img src=" {{ post.image.url }}" alt="Obrazek" width="100px">
-                {% endif %}
-                <p>{{ post.text|linebreaksbr }}</p>
+                <h2><a class="title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            {% if post.image %}
+                <img src=" {{ post.image.url }}"  alt="Obrazek" >
+            {% endif %}
+            <div class="read-more">
+                <a  href="{% url 'post_detail' pk=post.pk %}">Czytaj więcej</a>
             </div>
+        </div>
+
     {% endfor %}
     {% endblock %}

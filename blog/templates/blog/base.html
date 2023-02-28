@@ -5,23 +5,69 @@
     <title>Blog dla programistów</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name">
+    <script src="https://example.com/fontawesome/v5.15.4/js/all.js" data-auto-replace-svg></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="page-header">
-        {% if user.is_authenticated %}
-            <a href=" {% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        {% endif %}
-        <h1><a href="/">Blog dla programistów</a> </h1>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md8">
-                {% block content %}
-                {% endblock %}
+    <nav class="navbar">
+        <header class = "navbar-container">
+            <div class = "logo">
+                <h1><a href="/">Blog filmowy <span class="glyphicon glyphicon-film"></span></a></h1>
+            </div>
+            <div class = "navbar-item">
+                {% if user.is_authenticated %}
+                    <a href=" {% url 'post_new' %}" class="top-menu">Dodaj post<span class="glyphicon glyphicon-plus"></span></a>
+                {% endif %}
+
+                <div class = btn-log>
+                    {% if user.is_authenticated %}
+                        <a href="/admin/logout/">Wyloguj się <span class="glyphicon glyphicon-log-out"></span></a>
+                    {% else %}
+                        <a href="/admin">Zaloguj się <span class="glyphicon glyphicon-log-in"></span></a>
+                    {% endif %}
+                </div>
+            </div>
+         </header>
+    </nav>
+    <main>
+        <div class="main-container">
+            <div class="content">
+                    {% block content %}
+                    {% endblock %}
             </div>
         </div>
+    </main>
 
-    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="about">
+                    <h3>O nas</h3>
+                    <p> Jest to blog filmowy na którym dzielimy się
+                        swoimi spostrzeżeniami, recenzjami i przemyśleniami na
+                        temat filmów. Nasza misja polega na pomocy w odkrywaniu i
+                        zrozumieniu różnych gatunków filmowych, a także na promowaniu
+                        ciekawych produkcji i twórców.
+                        Na naszym blogu znajdziecie wiele recenzji filmowych, artykułów
+                        o różnych aspektach tworzenia filmów, wywiadów z aktorami i reżyserami
+                        oraz wiele innych ciekawych materiałów. Staramy się być jak najbardziej
+                        wszechstronni i dostarczać naszym czytelnikom informacji na temat
+                        filmów z całego świata.</p>
+                </div>
+
+                <div class = "footer-logo">
+                    <h1><a href="/">Blog filmowy <span class="glyphicon glyphicon-film"></span></a></h1>
+                    <div class="links">
+                        <a class="facebook" href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2023 All Right Reversed by Adam Oleszczuk</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
