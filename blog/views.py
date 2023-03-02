@@ -29,7 +29,7 @@ class ImageDisplay(DetailView):
     context_object_name = 'image'
 
 def post_list(request):
-    posts = Post.objects.filter(publish_date__lte=timezone.now()).order_by('publish_date')
+    posts = Post.objects.filter(publish_date__lte=timezone.now()).order_by('-publish_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_detail(request, pk):
