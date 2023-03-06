@@ -5,5 +5,4 @@ Projekt został wykonany z użyciem języka Python oraz frameworku Django. Wykor
 Aby zalogować się do panelu administratora użyj danych poniżej. Po zalogownaiu należy przejść do zakładki 'Pokaż stronę'.
 
 Login: admin
-
 Hasło: haslo123
