@@ -12,10 +12,10 @@ body{
 }
 .navbar-container{
     display: flex;
-    max-width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
     padding:  5px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
 }
@@ -62,7 +62,8 @@ h1 a:hover {
 }
 
 .main-container {
-    max-width: 50%;
+    max-width:830px;
+    width: 50%;
     margin: 0 auto;
 }
 
@@ -110,7 +111,8 @@ title{
 
 
 .post img {
-    max-width: 100%;
+    max-width: 700px;
+    width: 100%;
     padding: 0px;
     border-radius: 10px;
 }
@@ -187,4 +189,19 @@ footer{
 .copyright{
     text-align: right;
     padding-top: 10px;
+}
+
+@media only screen and (max-width:600px){
+
+    .main-container {
+    width: 100%;
+    margin: 0 auto;
+    }
+
+    .footer-content{
+    display: block;
+    }
+    .btn-log{
+    margin-left:10px;
+    }
 }
